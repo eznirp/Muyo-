@@ -5,11 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // Homepage Structure 
 
 import Layout from './components/Layout'; 
-
 import ArticlePage from './pages/ArticlePage'; 
-
 import HomePage from './pages/HomePage'; 
-
 import AboutPage from './pages/AboutPage'; 
 
  
