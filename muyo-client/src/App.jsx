@@ -1,25 +1,79 @@
-import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom' 
+
  
-function App() {
 
-  return (
-<div className="App">
-<header className="App-header">
-<h1>Welcome to My React App!</h1>
-<p>
+// Homepage Structure 
 
-          Name: Prinze Lynard F. Muyo <br />
+import Layout from './components/Layout'; 
 
-          Email: prinzemuyo0@gmail.com <br />
+import ArticlePage from './pages/ArticlePage'; 
 
-          Other Personal Info: BSIT Student
-</p>
-</header>
-</div>
+import HomePage from './pages/HomePage'; 
 
-  );
+import AboutPage from './pages/AboutPage'; 
 
-}
  
-export default App;
+
+const routes = [ 
+
+  { 
+
+    path: '/', 
+
+    element: <Layout />, 
+
+    children: [ 
+
+      { 
+
+        path: '', 
+
+        element: <HomePage />, 
+
+      }, 
+
+      { 
+
+        path: 'about', 
+
+        element: <AboutPage />, 
+
+       }, 
+
+      { 
+
+        path: 'articles', 
+
+        element: <ArticlePage />, 
+
+      }, 
+
+    ], 
+
+  }, 
+
+]; 
+
  
+
+const router = createBrowserRouter(routes); 
+
+ 
+
+function App( ) { 
+
+  return ( 
+
+    <> 
+
+     <RouterProvider router={router} /> 
+
+    </> 
+
+  ); 
+
+} 
+
+ 
+
+export default App; 
